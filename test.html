@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // 快慢指针算法 对已经排序的数组去重
+  let nums = [1, 1, 1, 2, 3, 4, 5, 5]
+  var removeDuplicates = function (nums) {
+    let slow = 0, fast = 1, len = nums.length
+    if (len === 0) return 0
+    while (fast < len) {
+      if (nums[fast] !== nums[slow]) {
+        slow++
+        nums[slow] = nums[fast]
+      }
+      fast++
+    }
+    return slow + 1
+  }
+  var res = removeDuplicates(nums)
+  console.log(res, nums)
+</script>
+
+</html>
